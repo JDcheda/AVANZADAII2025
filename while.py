@@ -15,6 +15,12 @@ os.system('cls' if os.name == 'nt' else 'clear')
 #     print("Escribiste: ", entrada)
 
 print("Ciclo controlado por banderin 2")
-bandera = False
-while bandera != True:
+bandera = True
+while bandera != False:
     bandera = input("Ingrese S para terminar: ")
+    print(bandera.upper())
+    salir = bandera.upper()
+    if salir == 'S':
+        bandera = False
+        print("saliste del ciclo")
+
