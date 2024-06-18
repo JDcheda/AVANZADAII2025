@@ -1,6 +1,5 @@
 import datetime
 
-# Diccionario completo de departamentos y municipios de Honduras
 localidades = {
     "01": {"nombre": "Atlántida", "municipios": {"01": "La Ceiba", "02": "El Porvenir", "03": "Tela", "04": "Arizona", "05": "Esparta", "06": "Jutiapa", "07": "La Masica", "08": "San Francisco"}},
     "02": {"nombre": "Choluteca", "municipios": {"01": "Choluteca", "02": "Apacilagua", "03": "Concepción de María", "04": "Duyure", "05": "El Corpus", "06": "El Triunfo", "07": "Marcovia", "08": "Morolica", "09": "Namasigüe", "10": "Orocuina", "11": "Pespire", "12": "San Antonio de Flores", "13": "San Isidro", "14": "San José", "15": "San Marcos de Colón", "16": "Santa Ana de Yusguare"}},
@@ -22,17 +21,16 @@ localidades = {
     "18": {"nombre": "Yoro", "municipios": {"01": "Yoro", "02": "Arenal", "03": "El Negrito", "04": "El Progreso", "05": "Jocón", "06": "Morazán", "07": "Olanchito", "08": "Santa Rita", "09": "Sulaco", "10": "Victoria", "11": "Yorito"}}
 }
 
-# Diccionario de usuarios (usuario: contraseña)
 usuarios = {
     "admin": "admin123",
     "user1": "password1",
     "user2": "password2"
 }
-#usuario 
+
 def autenticar_usuario(usuario, contraseña):
     return usuarios.get(usuario) == contraseña
 
-# Función para autenticación
+
 def calcular_edad(anio_nacimiento):
     anio_actual = datetime.datetime.now().year
     return anio_actual - anio_nacimiento
@@ -65,7 +63,6 @@ def buscar_departamento_municipio(depto_codigo, muni_codigo):
     municipio = localidades.get(depto_codigo, {"municipios": {}}).get("municipios", {}).get(muni_codigo, "Desconocido")
     return departamento, municipio
 
-# Menú principal
 def menu_principal():
      while True:
         print("\nMenu:")
@@ -117,7 +114,6 @@ def menu_principal():
             print("Opción no válida, por favor intente de nuevo.")
 
 
-# Función principal
 def main():
     print("Bienvenido al Sistema de Registro de Hondureños Mayores de 18 Años")
     usuario = input("Ingrese su usuario: ")
@@ -129,5 +125,4 @@ def main():
     else:
         print("Usuario o contraseña incorrectos.")
 
-# Ejecutar función principal
 main()
